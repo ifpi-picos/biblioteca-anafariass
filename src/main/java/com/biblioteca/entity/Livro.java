@@ -1,3 +1,4 @@
+package com.biblioteca.entity;
 public class Livro {
     private String autor;
     private String titulo;
