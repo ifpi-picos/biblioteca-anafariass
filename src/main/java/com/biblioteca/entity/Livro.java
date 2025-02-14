@@ -1,17 +1,16 @@
 package com.biblioteca.entity;
+
 public class Livro {
-    private String autor;
     private String titulo;
-    private int ano;
-    private String edicao;
+    private String autor;
+    private int ano_publicacao;
+    private String isbn;
     private boolean emprestado;
 
-    public Livro() {
-
-    }
+    public Livro() {}
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -26,24 +25,24 @@ public class Livro {
         this.autor = autor;
     }
 
-    public String getEdicao() {
-        return edicao;
+    public int getAnoPublicacao() {
+        return ano_publicacao;
     }
 
-    public void setEdicao(String edicao) {
-        this.edicao = edicao;
+    public void setAnoPublicacao(int ano_publicacao) {
+        this.ano_publicacao = ano_publicacao;
     }
 
-    public int getAno() {
-        return ano;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public boolean isEmprestado() {
-        return emprestado;
+        return this.emprestado;
     }
 
     public void setEmprestado(boolean emprestado) {
@@ -55,12 +54,9 @@ public class Livro {
         return "Livro{" +
                 "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
-                ", edicao='" + edicao + '\'' +
-                ", ano=" + ano +
+                ", ano_publicacao=" + ano_publicacao +
+                ", isbn='" + isbn + '\'' +
                 ", emprestado=" + emprestado +
                 '}';
     }
-
-
-
 }

@@ -1,6 +1,7 @@
 com\biblioteca\entity\Usuario.class
 com\biblioteca\dao\LivroDAO.class
-com\biblioteca\App.class
+com\biblioteca\Conexao.class
+com\biblioteca\Enter.class
 com\biblioteca\entity\Livro.class
 com\biblioteca\entity\Biblioteca.class
 com\biblioteca\dao\UsuarioDAO.class

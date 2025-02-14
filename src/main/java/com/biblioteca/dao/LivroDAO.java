@@ -2,23 +2,22 @@ package com.biblioteca.dao;
 
 import java.sql.*;
 
+import com.biblioteca.Conexao;
+
 
 public class LivroDAO {
-    // private Connection conexao;
-    
-    // public LivroDAO(Connection conexao) {
-    //     this.conexao = conexao;
-    // }
-    
-    public void inserirLivro(String titulo, String autor, int ano, String isbn) {
-            String sql = "INSERT INTO livro (titulo, autor, ano_publicacao, isbn) VALUES (?, ?, ?, ?)";
+
+    public void inserirLivro(String titulo, String autor, int ano_publicacao, String isbn, boolean emprestado) {
+            String sql = "INSERT INTO livro (titulo, autor, ano_publicacao, isbn, emprestado) VALUES (?, ?, ?, ?)";
         
-            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/biblioteca", "postgres", "20042003");PreparedStatement stmt = conn.prepareStatement(sql)) {
+            try (Connection conn = Conexao.conectar();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
         
                 stmt.setString(1, titulo);
                 stmt.setString(2, autor);
-                stmt.setInt(3, ano);
+                stmt.setInt(3, ano_publicacao);
                 stmt.setString(4, isbn);
+                stmt.setBoolean(5, emprestado);
                 int linhasAfetadas = stmt.executeUpdate();
                 if (linhasAfetadas > 0) {
                     System.out.println("Livro inserido com sucesso!");

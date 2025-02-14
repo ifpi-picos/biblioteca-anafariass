@@ -1,4 +1,5 @@
 package com.biblioteca.entity;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,6 @@ public class Biblioteca {
         }
     }
 
-
     public void pegarLivroEmprestado(Usuario usuario, Livro livro) {
         if (!livro.isEmprestado()) {
             livro.setEmprestado(true);
@@ -61,12 +61,13 @@ public class Biblioteca {
             System.out.println("O livro já está emprestado: " + livro.getTitulo());
         }
     }
+
     public void devolverLivro(Livro livro) {
         if (livro.isEmprestado()) {
             livro.setEmprestado(false);
             System.out.println("Livro devolvido com sucesso: " + livro.getTitulo());
         } else {
             System.out.println("Este livro não está emprestado.");
-
-        }}
+        }
+    }
 }
